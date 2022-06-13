@@ -11,8 +11,10 @@ include_once "../api/base.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>吱吱投票管理中心</title>
+    <title>吱吱投票管理中心</title>    
+    <link rel="stylesheet" href="../css/basic.css">
     <link rel="stylesheet" href="../css/back.css">
+
 </head>
 
 <body>
@@ -42,7 +44,7 @@ include_once "../api/base.php";
                 $subjects=all('subjects');
                 foreach($subjects as $subject){
                     echo "<li class='list-items'>";
-                    echo "subjects['subjects']";
+                    //echo "subjects['subjects']";
                     echo "<li>";
                 }
 

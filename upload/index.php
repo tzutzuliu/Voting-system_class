@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>吱吱測試投票中心</title>
     <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/font.css">
 </head>
 <body>
     <!--前端給使用者投票的畫面-->
