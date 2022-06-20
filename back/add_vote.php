@@ -1,32 +1,39 @@
-<!--重要提及備註-->
-<!--往上一層去api資料夾找add_vote.php的檔案-->
-<!--並把form表單資料全部寫進去(存進去資料庫)-->
-<!--存完之後會在upload資料夾看到back.php檔案看到資料-->
-
-<form action="../api/add_vote.php" method="post">    
+<form action="./api/add_vote.php" method="post">
+    <div>
+        <select name="types" id="types">
+        <?php
+            $types=all("types");
+            foreach($types as $type){
+                echo "<option value='{$type['id']}'>";
+                echo $type['name'];
+                echo "</option>";
+            }
+            ?>
+        </select>
+    </div>
     <div>
         <label for="subject">投票主題：</label>
         <input type="text" name="subject" id="subject">
-        <input type="submit" value="新增選項" onclick="more()">
+        <input type="button" value="新增選項" onclick="more()">
     </div>
-
+    <div id="selector">
+        <input type="radio" name="multiple" value="0" checked>
+        <label>單選</label>
+        <input type="radio" name="multiple" value="1" >
+        <label>複選</label>
+    </div>
     <div id="options">
         <div>
             <label>選項:</label><input type="text" name="option[]">
-            <label>選項:</label><input type="text" name="option[]">
-
         </div>
-
     </div>
-    <input type="submit" value="新增add">
+    <input type="submit" value="新增">
 
-</form> 
-
+</form>
 <script>
     function more(){
-        //每次function函數在呼叫的時候,就把div id的options塞進這裡
         let opt=`<div><label>選項:</label><input type="text" name="option[]"></div>`;
-        let opts=document.getElementById('option').innerHTML;
+        let opts=document.getElementById('options').innerHTML;
         opts=opts+opt;
         document.getElementById('options').innerHTML=opts;
     }

@@ -1,1 +1,2 @@
-<div class="slider">輪播器</div>
+
+    <div class="slider">輪播器</div>
